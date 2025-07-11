@@ -178,8 +178,6 @@ ostream& operator<<(ostream& os, const RA_Input& in)
   }
   os << "\n";
 
-  // dio infame
-
   // ARENAS
   os << "ARENAS % code, coordinates\n";
   for (const auto& a : in.arenasData) {
