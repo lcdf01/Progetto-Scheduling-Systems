@@ -1,0 +1,48 @@
+Il seguente problema riguarda l'assegnazione di un numero variabile di arbitri per ogni partita di ogni divisione per tutta la stagione.
+Abbiamo un insieme di vincoli e obiettivi, un punto cardine è la minimizzazione delle miglia percorse da ogni arbitro.
+
+## INPUT ##
+
+Arbitro:
+- Coordinate geografiche
+- Qualificazione
+- Esperienza
+- Incompatibilità con Squadre / arbitri
+- Non disponibilità
+
+Match:
+- Squadra di casa
+- Squadra esterna
+- Divisione
+- Data
+- Ora inizio
+- Sede
+- Esperienza totale minima 
+
+Per ogni match abbiamo un numero minimo (hard) e opzionale di arbitri, che però è uguale per tutti i match della stessa divisione.
+La durata massima di ogni gara è fissata a 2 ore.
+La sede e lo stadio possono essere condivisi da diverse squadre, e un team può usarne diverse per gare diverse.
+Le distanze sono calcolate tramite la distanza Euclidea, utilizzando le coordinate.
+
+## VINCOLI ##
+
+Una soluzione consiste in una lista di assegnamenti di arbitri e gare, abbiamo vincoli hard e soft.
+
+HARD:
+
+1) Numero minimo di arbitri
+2) Distanza di viaggio ammissibile: Un arbitro non può essere assegnato a due gare che si sovrappongono in tempo,
+la nozione di sovrapposizione include il tempo di viaggio dell'arbitro tra due stadi.
+3) Disponibilità Arbitri
+
+SOFT:
+
+1) Livello Esperienza arbitri (divisione)
+2) Mancanza di Esperienza (partita)
+3) Distribuzione delle partite
+4) Distanza totale
+5) Arbitri Opzionali
+6) Frequenza di assegnamenti
+7) Incompatibilità dei team
+
+ 
