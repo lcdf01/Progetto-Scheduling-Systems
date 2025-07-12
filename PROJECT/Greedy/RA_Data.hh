@@ -25,7 +25,8 @@ public:
   float DistanceBetweenArenasAndReferee(unsigned a, unsigned r) const {return distanceBetweenArenasAndReferee[a][r];}
 
 
-public:
+private:
+  // Problem parameters
   unsigned divisions, referees, arenas, teams, games;
   // Distance matrices
   vector<vector<float>> distanceBetweenArenas;
@@ -34,7 +35,7 @@ public:
 
   // Division Data structure
   struct Division {
-    string code;                // D1 Unique identifier for the division
+    string code;                  // D1 Unique identifier for the division
     unsigned min_referees;        // INT Minimum number of referees required for the division
     unsigned max_referees;        // INT Maximum number of referees allowed for the division
     unsigned level;               // INT Minimum level of experience required by a referee
@@ -44,15 +45,15 @@ public:
 
   // Referee Data structure
   struct Referee {
-    string code;                                      // R1 Unique identifier for the referee
-    unsigned level;                                     // INT Level of the referee
-    pair <float, float> coordinates;              // Coordinates of the referee (x, y)
-    unsigned experience;                                // INT Experience of the referee
-    vector<string> incompatible_referees;             // Vector of referees that this referee cannot work with
-    vector<string> incompatible_teams;                // Vector of teams that this referee cannot officiate
+    string code;                                    // R1 Unique identifier for the referee
+    unsigned level;                                 // INT Level of the referee
+    pair <float, float> coordinates;                // Coordinates of the referee (x, y)
+    unsigned experience;                            // INT Experience of the referee
+    vector<string> incompatible_referees;           // Vector of referees that this referee cannot work with
+    vector<string> incompatible_teams;              // Vector of teams that this referee cannot officiate
     vector<pair <string, string>> unavailabilities; // Vector of pairs representing unavailability periods (date, hour)
   };
-  vector<Referee> refereesData;                         // Vector of referees
+  vector<Referee> refereesData;                     // Vector of referees
 
   // Arena Data structure
   struct Arena {
